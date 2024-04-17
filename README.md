@@ -1,4 +1,4 @@
-**Read-Me: Game Jam mit Godot Engine**
+**Read-Me: Game Cem mit Godot Engine**
 
 Willkommen zum Game Jam! 
 
