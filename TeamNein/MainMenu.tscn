@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5hi0tc4xb6k5"]
+[gd_scene load_steps=3 format=3 uid="uid://b5hi0tc4xb6k5"]
 
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_e6x0v"]
 [ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_e6x0v")
 
 [node name="1XmoPcNqLcjyk2AvFiFol5w" type="Sprite2D" parent="."]
 position = Vector2(577, 324)
@@ -26,3 +28,6 @@ text = "Settings"
 [node name="QuitGame_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame_Button" to="." method="_on_quit_game_button_pressed"]
