@@ -38,7 +38,7 @@ Willkommen zum Game Jam!
 | 19:00 | Projektvorstellungen                                   | Open End | Alle Teilnehmer     |
 
 ### Thema:
-- Das Thema dieses Game Jams lautet: [Thema].
+- Das Thema dieses Game Jams lautet: "It never Ends".
 - Du bist eingeladen, ein Spiel zu entwickeln, das dieses Thema auf kreative und originelle Weise interpretiert.
 
 ### Regeln unseres Teams:
