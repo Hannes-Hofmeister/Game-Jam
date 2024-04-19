@@ -1,4 +1,4 @@
-**Read-Me: Game Cem mit Godot Engine**
+# Read-Me: Game Cem mit Godot Engine
 
 Willkommen zum Game Jam! 
 
@@ -25,6 +25,7 @@ Willkommen zum Game Jam!
 | 14:00 | Git                                                             | 55min  | Valentin Kolb - Computerreferat |
 | 15:00 | Docker                                                          | 55min  | Valentin Kolb - Computerreferat |
 | 16:00 | A Hitchhikers Guide for CI/CD                                   | 115min | Sven Patrick Meier - SPMSEC     |
+| 16:20 | Kolben durchziehen Seminar                                      | 20min  | Hannes Baumeister               |
 
 #### Sonntag, 21. April
 
