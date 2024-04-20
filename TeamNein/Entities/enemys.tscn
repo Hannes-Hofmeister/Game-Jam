@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_biec1"]
-radius = 324.617
+radius = 174.141
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_lxwmb")
@@ -142,10 +142,11 @@ offset = Vector2(0, -6)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" groups=["enemy"]]
 shape = SubResource("CircleShape2D_biec1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_biec1")
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]

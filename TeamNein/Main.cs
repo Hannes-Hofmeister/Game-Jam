@@ -12,6 +12,7 @@ public partial class Main : Node2D
 		var scene = GD.Load<PackedScene>("res://Scenes/MainMenu.tscn");
 		var mainMenuIns = scene.Instantiate();
 		AddChild(mainMenuIns);
+		
 	}
 
 	private object StartRun()
