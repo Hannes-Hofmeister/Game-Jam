@@ -231,7 +231,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
-[connection signal="GameStart" from="." to="." method="_on_game_start"]
 [connection signal="pressed" from="VBoxContainer/StartGame_Button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGame_Button" to="." method="_on_quit_game_button_pressed"]
