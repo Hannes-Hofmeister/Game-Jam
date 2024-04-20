@@ -62,6 +62,7 @@ public partial class Player : CharacterBody2D
 		//Rotation = (GetGlobalMousePosition() - GlobalPosition).Angle(); //Player looks to the mouse 
 		
 		var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		animatedSprite2D.Play();
 		if (velocity is { X: 0, Y: < 0 })
 		{
 			animatedSprite2D.Animation = "walk up";
@@ -88,11 +89,18 @@ public partial class Player : CharacterBody2D
 		}
 		else if (velocity is { X: < 0, Y: <0 })
 		{ 
-			animatedSprite2D.Animation = "walk down left";
+			animatedSprite2D.Animation = "walk up left";
 		}
 		else if (velocity is { X: > 0, Y: <0 })
 		{ 
 			animatedSprite2D.Animation = "walk up right";
+		}
+		else if (velocity is { X:  0, Y: 0 })
+		{
+			animatedSprite2D.Stop();
+		}
+		{
+			
 		}
 	   
 		if (Input.IsActionPressed("shoot") && _time_untile_fire > _fire_rate)
