@@ -18,17 +18,19 @@ public partial class Player : CharacterBody2D
 		Node2D bullet = bullet_scn.Instantiate<Node2D>();
 		ScreenSize = GetViewportRect().Size;
 		_fire_rate = 0.5f;
-		setPlayerTimer(5);
+		setPlayerTimer(0,30);
 	
 
 
 
 	}
 	// This function allows to change the minutes value from the Countdown.gd
-	public void setPlayerTimer(int value){
+	public void setPlayerTimer(int minutesValue, int secondsValue){
 		timer = GetNode<Control>("./Control");
 		int countdownMinutes = (int)timer.Get("minutes");
-		timer.Set("minutes",value);
+		int countdownSeconds = (int)timer.Get("seconds");
+		timer.Set("minutes",minutesValue);
+		timer.Set("seconds",secondsValue);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

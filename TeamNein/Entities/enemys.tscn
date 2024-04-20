@@ -135,6 +135,7 @@ radius = 174.141
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hfwh"]
 
 [node name="enemy" type="CharacterBody2D"]
+position = Vector2(275, 225)
 script = ExtResource("1_lxwmb")
 
 [node name="animatedSprite" type="AnimatedSprite2D" parent="."]
@@ -159,6 +160,7 @@ shape = SubResource("CircleShape2D_qi5sx")
 shape = SubResource("CircleShape2D_4hfwh")
 
 [node name="Control" parent="." instance=ExtResource("3_yi3r2")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
