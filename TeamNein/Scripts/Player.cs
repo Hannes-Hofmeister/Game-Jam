@@ -54,9 +54,45 @@ public partial class Player : Area2D
             x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
             y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
+        
 
 
-        Rotation = (GetGlobalMousePosition() - GlobalPosition).Angle(); //Player looks to the mouse 
+        //Rotation = (GetGlobalMousePosition() - GlobalPosition).Angle(); //Player looks to the mouse 
+        
+        var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        if (velocity is { X: 0, Y: < 0 })
+        {
+            animatedSprite2D.Animation = "walk up";
+        }
+        else if (velocity is { X: > 0, Y: 0 })
+        { 
+            animatedSprite2D.Animation = "walk right";
+        }
+        else if (velocity is { X: 0, Y: >0 })
+        { 
+            animatedSprite2D.Animation = "walk down";
+        }
+        else if (velocity is { X: < 0, Y: 0 })
+        { 
+            animatedSprite2D.Animation = "walk left";
+        }
+        else if (velocity is { X: < 0, Y: >0 })
+        { 
+            animatedSprite2D.Animation = "walk down left";
+        }
+        else if (velocity is { X: > 0, Y: >0 })
+        { 
+            animatedSprite2D.Animation = "walk down right";
+        }
+        else if (velocity is { X: < 0, Y: <0 })
+        { 
+            animatedSprite2D.Animation = "walk down left";
+        }
+        else if (velocity is { X: > 0, Y: <0 })
+        { 
+            animatedSprite2D.Animation = "walk up right";
+        }
+       
         if (Input.IsActionPressed("shoot") && _time_untile_fire > _fire_rate)
         {
             _time_untile_fire = 0f;
