@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cbeanfx0ugyfv"]
+[gd_scene load_steps=55 format=3 uid="uid://cbeanfx0ugyfv"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_febm5"]
 [ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="2_3y0pr"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://dr63xdf1uq1db" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-4.png" id="49_pv3vn"]
 [ext_resource type="Texture2D" uid="uid://bw7v7e60itju0" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-5.png" id="50_yygyr"]
 [ext_resource type="Texture2D" uid="uid://bnrvim6kkig18" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-6.png" id="51_bmgbl"]
+[ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="52_cispx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qmtx6"]
 animations = [{
@@ -268,3 +269,10 @@ frame_progress = 0.364311
 position = Vector2(0, 1)
 scale = Vector2(1.19297, 0.758382)
 shape = SubResource("CapsuleShape2D_7cyhu")
+
+[node name="Control" parent="." instance=ExtResource("52_cispx")]
+offset_left = 2.0
+offset_top = -61.0
+offset_right = 2.0
+offset_bottom = -61.0
+scale = Vector2(1, 1.32)
