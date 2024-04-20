@@ -13,9 +13,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print("Test");
-	var root_node = get_tree().get_root();
-	root_node.free();
-	   # Lade und instanziere die neue Root-Szene
+	
+	  # Lade und instanziere die neue Root-Szene
 	#var new_root_scene = preload("res://Scenes/Map/shop_room.tscn");
 	#var new_root_instance = new_root_scene.instance()
 	
