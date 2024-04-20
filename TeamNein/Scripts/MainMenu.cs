@@ -25,8 +25,12 @@ public partial class MainMenu : Control
 		var scene = GD.Load<PackedScene>("res://Entities/player.tscn");
 		var playerScene = scene.Instantiate();
 		
-		GetTree().Root.AddChild(playerScene);
+		
 
+		var tilemap = GD.Load<PackedScene>("res://Scenes/Map/tile_map.tscn");
+		var tilemapScene = tilemap.Instantiate();
+		GetTree().Root.AddChild(tilemapScene);
+		GetTree().Root.AddChild(playerScene);
 
 
 	}
