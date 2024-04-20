@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5hi0tc4xb6k5"]
 
-[ext_resource type="Script" path="res://MainMenu.cs" id="1_e6x0v"]
-[ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_e6x0v"]
+[ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://Assets/1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,6 +20,7 @@ texture = ExtResource("1_l1bsr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 24.0
 offset_top = 522.0
 offset_right = 159.0
