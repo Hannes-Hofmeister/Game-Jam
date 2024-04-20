@@ -25,14 +25,9 @@ text = "
 metadata/_edit_group_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Countdown"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -35.5
-offset_right = 35.5
+layout_mode = 0
+offset_right = 40.0
 offset_bottom = 40.0
-grow_horizontal = 2
 theme_override_constants/separation = 15
 
 [node name="min" type="RichTextLabel" parent="Countdown/HBoxContainer"]
@@ -52,7 +47,6 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="dsec" type="RichTextLabel" parent="Countdown/HBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "asd"
@@ -65,7 +59,6 @@ wait_time = 0.1
 autostart = true
 
 [node name="Button" type="Button" parent="Countdown"]
-visible = false
 layout_mode = 0
 offset_left = -280.0
 offset_top = 65.0
@@ -74,4 +67,4 @@ offset_bottom = 175.0
 text = "+10s"
 
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
-[connection signal="pressed" from="Countdown/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Countdown/Button" to="Countdown" method="_on_button_pressed"]
