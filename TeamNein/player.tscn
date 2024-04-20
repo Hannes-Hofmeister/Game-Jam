@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbeanfx0ugyfv"]
+[gd_scene load_steps=5 format=3 uid="uid://cbeanfx0ugyfv"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_febm5"]
 [ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://icon.svg" id="2_3y0pr"]
+[ext_resource type="PackedScene" uid="uid://dkri68ttn6r3t" path="res://bullet.tscn" id="2_vtxki"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qmtx6"]
 animations = [{
@@ -16,6 +17,7 @@ animations = [{
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_febm5")
+bullet_scn = ExtResource("2_vtxki")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
