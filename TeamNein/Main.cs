@@ -9,6 +9,9 @@ public partial class Main : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		var GameManager = GD.Load<PackedScene>("res://Main.tscn").Instantiate();
+		GetTree().Root.AddChild(GameManager);
+		
 		var scene = GD.Load<PackedScene>("res://Scenes/MainMenu.tscn");
 		var mainMenuIns = scene.Instantiate();
 		AddChild(mainMenuIns);
