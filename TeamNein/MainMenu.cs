@@ -14,4 +14,26 @@ public partial class MainMenu : Node2D
 		
 	}
 	
+	private void _on_start_game_button_pressed()
+	{
+		// Replace with function body.
+	}
+
+	
+	private void _on_settings_button_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://SettingsMenu.tscn");
+	}
+
+	private void _on_quit_game_button_pressed()
+	{
+		GetTree().Quit();
+	}
+
+
+
 }
+
+
+
+
