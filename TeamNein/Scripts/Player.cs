@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Player : Area2D
+public partial class Player : CharacterBody2D
 {
 	[Export] PackedScene bullet_scn; //Insert Scene from Godot
 	//Shooting Attributes
