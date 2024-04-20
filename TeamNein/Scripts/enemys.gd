@@ -22,8 +22,7 @@ func _physics_process(delta):
 			var timer := get_node("./Control") as Control
 			var currentMinutes := timer.get("minutes") as int
 			var currentSeconds := timer.get("seconds") as int
-			var currentPlayerMinute = playerTimer.get("countdownMinutes") as int
-			var currentPlayerSeconds = playerTimer.get("countdownSeconds") as int
+
 			queue_free()
 			
 			
