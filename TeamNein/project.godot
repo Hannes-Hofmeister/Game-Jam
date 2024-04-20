@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -58,4 +59,5 @@ shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"

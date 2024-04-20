@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpjigl0mnia8o"]
+
+[ext_resource type="Texture2D" uid="uid://dhothgcu626uf" path="res://Assets/Shop Assets/Shop_Background.png" id="1_d2vc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_merfa"]
+size = Vector2(835, 382)
+
+[node name="Room" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("1_d2vc6")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(479.5, 288)
+shape = SubResource("RectangleShape2D_merfa")
