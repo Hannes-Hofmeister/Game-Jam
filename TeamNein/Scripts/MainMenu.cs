@@ -22,7 +22,7 @@ public partial class MainMenu : Control
 	
 	private void _on_settings_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://SettingsMenu.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/SettingsMenu.tscn");
 	}
 
 	private void _on_quit_game_button_pressed()
