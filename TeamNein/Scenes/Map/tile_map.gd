@@ -11,6 +11,8 @@ func _ready():
 	türUnten();
 	
 	
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,4 +42,4 @@ func türUnten():
 	türscene.position = Vector2(480,512);
 	türscene.rotation_degrees = -180;
 	add_child(türscene);
-	
+	#Test
