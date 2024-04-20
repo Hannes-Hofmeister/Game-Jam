@@ -99,34 +99,20 @@ public partial class Player : CharacterBody2D
 		{
 			animatedSprite2D.Stop();
 		}
+
+		if (_time_untile_fire > _fire_rate)
 		{
+			Vector2 shootdirection = Input.GetVector("shoot_left","shoot_right","shoot_up","shoot_down",0f).Normalized();
+			if (shootdirection.X !=0 || shootdirection.Y != 0)
+			{
+				GD.Print(shootdirection);
+				Node2D bullet = bullet_scn.Instantiate<Node2D>();
+				_time_untile_fire = 0f;
+				bullet.Rotation = shootdirection.Angle();
+				bullet.GlobalPosition = GlobalPosition;
+				GetTree().Root.AddChild(bullet);
+			}
 			
-		}
-	   
-		if (Input.IsActionPressed("shoot") && _time_untile_fire > _fire_rate)
-		{
-			_time_untile_fire = 0f;
-			Node2D bullet = bullet_scn.Instantiate<Node2D>();
-			bullet.Rotation = GlobalRotation;
-			bullet.GlobalPosition = GlobalPosition;
-
-		//Make it smooth 
-		Position += velocity * (float)delta;
-		Position = new Vector2(
-			x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-			y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
-		);
-
-
-		Rotation = (GetGlobalMousePosition() - GlobalPosition).Angle(); //Player looks to the mouse 
-		if (Input.IsActionPressed("shoot") && _time_untile_fire > _fire_rate)
-		{
-			_time_untile_fire = 0f;
-			bullet.Rotation = GlobalRotation;
-			bullet.GlobalPosition = GlobalPosition;
-
-
-			GetTree().Root.AddChild(bullet);
 		}
 		else
 		{
@@ -134,4 +120,4 @@ public partial class Player : CharacterBody2D
 		}
 	}
 }
-}
+

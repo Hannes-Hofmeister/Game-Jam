@@ -247,8 +247,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k272h"]
-radius = 31.0644
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cyhu"]
+radius = 11.7354
+height = 92.3018
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(91, 75)
@@ -264,5 +265,6 @@ animation = &"walk down left"
 frame_progress = 0.364311
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 30)
-shape = SubResource("CircleShape2D_k272h")
+position = Vector2(0, 1)
+scale = Vector2(1.19297, 0.758382)
+shape = SubResource("CapsuleShape2D_7cyhu")
