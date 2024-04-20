@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1vbgwm0b3bf"]
 
-[ext_resource type="Texture2D" uid="uid://b1kopdbkxvrq5" path="res://Assets/Room Assets/Tilemap.png" id="1_pgwqa"]
+[gd_scene load_steps=5 format=3 uid="uid://c15mfnwiosvhd"]
+
+[ext_resource type="Texture2D" uid="uid://duej7lofu0sp0" path="res://Assets/towerDefense_tilesheet.png" id="1_71vl6"]
+[ext_resource type="Script" path="res://Scenes/Map/tile_map.gd" id="2_epn6w"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oj6bo"]
 texture = ExtResource("1_pgwqa")
@@ -723,3 +726,4 @@ sources/0 = SubResource("TileSetAtlasSource_oj6bo")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_fqowx")
 format = 2
+
