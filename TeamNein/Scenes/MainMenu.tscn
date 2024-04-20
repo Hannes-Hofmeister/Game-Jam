@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5hi0tc4xb6k5"]
+[gd_scene load_steps=4 format=3 uid="uid://b5hi0tc4xb6k5"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_e6x0v"]
 [ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://Assets/1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
+[ext_resource type="PackedScene" uid="uid://cbeanfx0ugyfv" path="res://Entities/player.tscn" id="2_iby47"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e6x0v")
+_player = ExtResource("2_iby47")
 
 [node name="1XmoPcNqLcjyk2AvFiFol5w" type="Sprite2D" parent="."]
 visible = false
@@ -229,6 +231,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
+[connection signal="GameStart" from="." to="." method="_on_game_start"]
 [connection signal="pressed" from="VBoxContainer/StartGame_Button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGame_Button" to="." method="_on_quit_game_button_pressed"]

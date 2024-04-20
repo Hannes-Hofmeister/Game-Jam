@@ -5,11 +5,13 @@ public partial class Main : Node2D
 {
 	[Export] private PackedScene _mainmenue;
 
-	[Export] private PackedScene _player;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//GetNode<Control>("/Scenes/MainMenu.tscn").Connect("GameStart",this,nameof(StartRun));
+		var scene = GD.Load<PackedScene>("res://Scenes/MainMenu.tscn");
+		var mainMenuIns = scene.Instantiate();
+		AddChild(mainMenuIns);
 	}
 
 	private object StartRun()
