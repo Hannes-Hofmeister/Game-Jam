@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkri68ttn6r3t"]
+
+[ext_resource type="Texture2D" uid="uid://bcij7ocms4xpl" path="res://bullet.png" id="1_4f7sd"]
+[ext_resource type="Script" path="res://Bullet.cs" id="2_w6kgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t535m"]
+radius = 15.0333
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("2_w6kgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4f7sd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t535m")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnArea2dEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="body_entered"]
