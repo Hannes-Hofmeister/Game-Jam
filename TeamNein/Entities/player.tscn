@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbeanfx0ugyfv"]
 
-[ext_resource type="Script" path="res://Player.cs" id="1_febm5"]
-[ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://icon.svg" id="2_3y0pr"]
-[ext_resource type="PackedScene" uid="uid://dkri68ttn6r3t" path="res://bullet.tscn" id="2_vtxki"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_febm5"]
+[ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="2_3y0pr"]
+[ext_resource type="PackedScene" uid="uid://dkri68ttn6r3t" path="res://Entities/bullet.tscn" id="2_vtxki"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qmtx6"]
 animations = [{
