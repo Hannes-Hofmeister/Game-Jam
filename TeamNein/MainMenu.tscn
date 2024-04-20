@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5hi0tc4xb6k5"]
+[gd_scene load_steps=3 format=3 uid="uid://b5hi0tc4xb6k5"]
 
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_e6x0v"]
 [ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6x0v")
 
 [node name="1XmoPcNqLcjyk2AvFiFol5w" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(577, 324)
 scale = Vector2(0.824286, 0.821066)
 texture = ExtResource("1_l1bsr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 24.0
 offset_top = 522.0
 offset_right = 159.0
@@ -26,3 +36,191 @@ text = "Settings"
 [node name="QuitGame_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -33.0
+offset_right = 26.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="Video" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+text = "Video"
+
+[node name="BackFromOptions" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -46.0
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -40.0
+offset_right = 55.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "FullScreen"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "Borderless"
+
+[node name="VSync" type="Label" parent="Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "VSync"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="BackFromVideo" type="Button" parent="Video"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -46.0
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="Audio" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.5
+offset_top = -38.5
+offset_right = 235.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="Audio/HBoxContainer/Label"]
+layout_mode = 2
+size_flags_vertical = 5
+size_flags_stretch_ratio = 2.72
+text = "Master"
+
+[node name="Music" type="Label" parent="Audio/HBoxContainer/Label"]
+layout_mode = 2
+size_flags_vertical = 5
+size_flags_stretch_ratio = 2.72
+text = "Music"
+
+[node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Label"]
+layout_mode = 2
+size_flags_vertical = 5
+size_flags_stretch_ratio = 2.72
+text = "Sound FX"
+
+[node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Sound FX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="BackFromAudio" type="Button" parent="Audio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -46.0
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/StartGame_Button" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame_Button" to="." method="_on_quit_game_button_pressed"]
