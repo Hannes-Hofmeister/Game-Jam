@@ -1,6 +1,6 @@
 extends Area2D
 
-
+signal shopDoorEntered;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,3 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print("Test");
+	var root_node = get_tree().get_root().get_children();
+	for child in root_node:
+		child.free()
+	
