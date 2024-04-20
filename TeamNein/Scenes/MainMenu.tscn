@@ -19,12 +19,13 @@ scale = Vector2(0.824286, 0.821066)
 texture = ExtResource("1_l1bsr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 24.0
-offset_top = 522.0
-offset_right = 159.0
-offset_bottom = 623.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -101.0
+offset_right = 135.0
+grow_vertical = 0
 
 [node name="StartGame_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -150,6 +151,7 @@ grow_vertical = 0
 text = "Back"
 
 [node name="Audio" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -16,6 +16,8 @@ animations = [{
 }]
 
 [node name="Player" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_febm5")
 bullet_scn = ExtResource("2_vtxki")
 metadata/_edit_group_ = true
