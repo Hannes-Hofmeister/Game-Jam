@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx0v37wm6ebif"
-path="res://.godot/imported/Walk_Down-2.png-e59b65c843fff32451697b01c6d09f6e.ctex"
+path="res://.godot/imported/Walk_Down-2.png-e6c5dc3752a44d9386e030a0e6e6ee3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-2.png"
-dest_files=["res://.godot/imported/Walk_Down-2.png-e59b65c843fff32451697b01c6d09f6e.ctex"]
+source_file="res://Assets/character_assets/walk_animations/walk_down/Walk_Down-2.png"
+dest_files=["res://.godot/imported/Walk_Down-2.png-e6c5dc3752a44d9386e030a0e6e6ee3e.ctex"]
 
 [params]
 

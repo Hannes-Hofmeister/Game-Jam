@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnpjtd8pn1i2t"
-path="res://.godot/imported/BuyButtonInactive.png-5f27e4fade376d720a7786448750aea2.ctex"
+path="res://.godot/imported/BuyButtonInactive.png-f3608279d41a1df3341b304f907eb304.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Shop Assets/Shop UI/BuyButtonInactive.png"
-dest_files=["res://.godot/imported/BuyButtonInactive.png-5f27e4fade376d720a7786448750aea2.ctex"]
+source_file="res://Assets/shop_assets/shop_ui/BuyButtonInactive.png"
+dest_files=["res://.godot/imported/BuyButtonInactive.png-f3608279d41a1df3341b304f907eb304.ctex"]
 
 [params]
 

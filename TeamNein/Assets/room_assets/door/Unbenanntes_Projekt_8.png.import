@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v3ubiq4l60gd"
-path="res://.godot/imported/Unbenanntes_Projekt 8.png-edccb953153ad942c34cd7b147fd2176.ctex"
+path="res://.godot/imported/Unbenanntes_Projekt_8.png-7d0639bd50a7c2e0d921524c4bd03f79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Room Assets/Tür/Unbenanntes_Projekt 8.png"
-dest_files=["res://.godot/imported/Unbenanntes_Projekt 8.png-edccb953153ad942c34cd7b147fd2176.ctex"]
+source_file="res://Assets/room_assets/door/Unbenanntes_Projekt_8.png"
+dest_files=["res://.godot/imported/Unbenanntes_Projekt_8.png-7d0639bd50a7c2e0d921524c4bd03f79.ctex"]
 
 [params]
 
