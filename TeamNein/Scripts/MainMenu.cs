@@ -4,6 +4,7 @@ using System;
 
 public partial class MainMenu : Control
 {
+	[Signal] public delegate void GameStartEventHandler();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,8 +18,11 @@ public partial class MainMenu : Control
 	
 	private void _on_start_game_button_pressed()
 	{
-		// Replace with function body.
-	}
+		//EmitSignal(SignalName.);
+		QueueFree();
+		
+	
+}
 
 	
 	private void _on_settings_button_pressed()
