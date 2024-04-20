@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	
+	Control timer;
 	[Export] PackedScene bullet_scn; //Insert Scene from Godot
 	//Shooting Attributes
 	private float _fire_rate;
@@ -18,6 +18,17 @@ public partial class Player : CharacterBody2D
 		Node2D bullet = bullet_scn.Instantiate<Node2D>();
 		ScreenSize = GetViewportRect().Size;
 		_fire_rate = 0.5f;
+		setPlayerTimer(5);
+	
+
+
+
+	}
+	// This function allows to change the minutes value from the Countdown.gd
+	public void setPlayerTimer(int value){
+		timer = GetNode<Control>("./Control");
+		int countdownMinutes = (int)timer.Get("minutes");
+		timer.Set("minutes",value);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

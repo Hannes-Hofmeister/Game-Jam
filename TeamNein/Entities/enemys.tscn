@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://s5aj55f35gdv"]
+[gd_scene load_steps=23 format=3 uid="uid://s5aj55f35gdv"]
 
 [ext_resource type="Script" path="res://Scripts/enemys.gd" id="1_lxwmb"]
 [ext_resource type="Texture2D" uid="uid://lewwfg0ev8to" path="res://Assets/enemy Assets/slime.png" id="2_gqh04"]
+[ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="3_yi3r2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu0td"]
 atlas = ExtResource("2_gqh04")
@@ -156,6 +157,8 @@ shape = SubResource("CircleShape2D_qi5sx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4hfwh")
+
+[node name="Control" parent="." instance=ExtResource("3_yi3r2")]
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]

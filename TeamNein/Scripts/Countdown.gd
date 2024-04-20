@@ -1,6 +1,6 @@
 extends Control
 
-var minutes = 2
+@export var minutes = 1
 var seconds = 0
 var dsec = 0
 var minLabel
