@@ -24,8 +24,8 @@ func _process(delta):
 
 	
 func startGame():
-	add_child(player)
 	add_child(room)
+	add_child(player)
 	room.connect("DoorActivated",DoorEntered)
 	mainmenue.queue_free()
 	

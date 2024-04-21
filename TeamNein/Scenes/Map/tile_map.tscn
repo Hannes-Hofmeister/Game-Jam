@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c15mfnwiosvhd"]
+[gd_scene load_steps=5 format=3 uid="uid://b31wdo73bjur7"]
 
 [ext_resource type="Texture2D" uid="uid://duej7lofu0sp0" path="res://Assets/towerDefense_tilesheet.png" id="1_71vl6"]
 [ext_resource type="Script" path="res://Scenes/Map/room.gd" id="2_82cxg"]

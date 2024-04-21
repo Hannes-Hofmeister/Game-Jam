@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c44nyeekrf0uw"]
 
-[ext_resource type="Texture2D" uid="uid://dc2w08qnhxb62" path="res://Assets/Room Assets/Tilemap.png" id="1_jso3p"]
+[ext_resource type="Texture2D" path="res://Assets/Room Assets/Tilemap.png" id="1_jso3p"]
 [ext_resource type="Script" path="res://Scenes/Map/shop_area.gd" id="2_tn7le"]
-[ext_resource type="Texture2D" uid="uid://b18d2sq7cljvl" path="res://Assets/Shop Assets/Unbenanntes_Projekt 9.png" id="3_jjy8g"]
+[ext_resource type="Texture2D" path="res://Assets/Shop Assets/Unbenanntes_Projekt 9.png" id="3_jjy8g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c83b"]
 texture = ExtResource("1_jso3p")
