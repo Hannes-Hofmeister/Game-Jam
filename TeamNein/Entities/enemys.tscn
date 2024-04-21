@@ -1,34 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://s5aj55f35gdv"]
+[gd_scene load_steps=14 format=3 uid="uid://s5aj55f35gdv"]
 
 [ext_resource type="Script" path="res://Scripts/enemys.gd" id="1_lxwmb"]
+[ext_resource type="Texture2D" uid="uid://drh2k2xdpr2gs" path="res://Assets/enemy Assets/Brawler/Nahkampfbrawler-1.png" id="2_wjxru"]
 [ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="3_yi3r2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pu0td"]
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phx0t"]
-region = Rect2(32, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mjma4"]
-region = Rect2(64, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilb51"]
-region = Rect2(96, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2cr2"]
-region = Rect2(128, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uakxu"]
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d74nc"]
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x47nn"]
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnh13"]
-region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqs1m"]
 region = Rect2(0, 32, 32, 32)
@@ -52,43 +26,6 @@ region = Rect2(160, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pu0td")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phx0t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mjma4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilb51")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2cr2")
-}],
-"loop": true,
-"name": &"Death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uakxu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d74nc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x47nn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnh13")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_uqs1m")
 }, {
 "duration": 1.0,
@@ -107,7 +44,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_q1x1p")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wjxru")
+}],
+"loop": true,
+"name": &"new_animation_1",
 "speed": 5.0
 }]
 
@@ -115,8 +60,10 @@ animations = [{
 radius = 174.141
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qi5sx"]
+radius = 67.1863
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hfwh"]
+radius = 73.0274
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(275, 225)
@@ -124,8 +71,7 @@ script = ExtResource("1_lxwmb")
 
 [node name="animatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vn5f5")
-animation = &"Idle"
-frame_progress = 0.302966
+animation = &"new_animation_1"
 offset = Vector2(0, -6)
 
 [node name="detectionArea" type="Area2D" parent="."]
@@ -144,6 +90,10 @@ shape = SubResource("CircleShape2D_qi5sx")
 shape = SubResource("CircleShape2D_4hfwh")
 
 [node name="Control" parent="." instance=ExtResource("3_yi3r2")]
+offset_left = 1.0
+offset_top = -101.0
+offset_right = 1.0
+offset_bottom = -101.0
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]

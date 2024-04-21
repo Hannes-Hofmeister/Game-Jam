@@ -5,12 +5,15 @@ var cell
 var roomGeneratorScript = preload("res://Scripts/Dungeon.gd") 
 var roomGenerator
 var dungeonArray
+var shop
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cell = 45
 	roomGenerator = roomGeneratorScript.new()
 	dungeonArray = roomGenerator.GenerateDungeon(1)
-	activeDoors = roomGenerator.getDoors(cell)
+	activeDoors = roomGenerator.getDoors(cell)#
+	shop = roomGenerator.get_endRooms()[0]
+	print(shop)
 	print(activeDoors)
 	print(dungeonArray)
 	for i in range(0,4):
@@ -29,7 +32,11 @@ func updateDoors():
 	for i in range(0,4):
 
 		get_child(0).get_child(i).set_visible(activeDoors[i])
-
+	if (cell == shop):
+		get_child(1).get_child(0).set_visible(false)
+	else:
+		get_child(1).get_child(0).set_visible(true)
+	print(cell)
 func _on_door_0_door_collided():
 
 	if(activeDoors[0]):
