@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://gjgivkkmnegd"]
+[gd_scene load_steps=4 format=3 uid="uid://gjgivkkmnegd"]
 
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="1_ods5y"]
 [ext_resource type="PackedScene" uid="uid://cbmdrtbsdmqwg" path="res://Scenes/Map/door.tscn" id="2_78ikr"]
+[ext_resource type="Texture2D" uid="uid://cgbm0sf7suxlr" path="res://Assets/Room Assets/Background.png" id="4_kvm2y"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ods5y")
@@ -9,18 +10,23 @@ script = ExtResource("1_ods5y")
 [node name="Doors" type="Node" parent="."]
 
 [node name="Door0" parent="Doors" instance=ExtResource("2_78ikr")]
-position = Vector2(935, 275)
+position = Vector2(922, 290)
 
 [node name="Door1" parent="Doors" instance=ExtResource("2_78ikr")]
-position = Vector2(476, -15)
+position = Vector2(484, 24)
 
 [node name="Door2" parent="Doors" instance=ExtResource("2_78ikr")]
-position = Vector2(-10, 271)
+position = Vector2(40, 276)
 
 [node name="Door3" parent="Doors" instance=ExtResource("2_78ikr")]
-position = Vector2(501, 542)
+position = Vector2(499, 512)
 
 [node name="Rooms" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms"]
+position = Vector2(2, 1)
+texture = ExtResource("4_kvm2y")
+centered = false
 
 [connection signal="doorCollided" from="Doors/Door0" to="." method="_on_door_0_door_collided"]
 [connection signal="doorCollided" from="Doors/Door1" to="." method="_on_door_1_door_collided"]
