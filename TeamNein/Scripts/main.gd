@@ -18,6 +18,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 'func _process(delta):
 	if not (is_connected("doorOn",doorEntered)):
 		#print(get_child_count())
@@ -29,13 +30,15 @@ func _ready():
 	
 
 
+
 	
 func startGame():
 	add_child(room)
 	add_child(player)
+
 #	room.connect("DoorActivated",doorEntered)
+
 	mainmenue.queue_free()
 	
-func doorEntered():
+func DoorEntered():
 	print("test")
-	
