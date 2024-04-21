@@ -23,6 +23,8 @@ func _on_body_entered(body):
 	
 	
 	
+
+
 	get_tree().get_root().add_child(shop)
 	var root_node = get_tree().get_root().get_children();
 	for child in root_node:
