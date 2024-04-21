@@ -18,7 +18,7 @@ public partial class Player : CharacterBody2D
 		Node2D bullet = bullet_scn.Instantiate<Node2D>();
 		ScreenSize = GetViewportRect().Size;
 		_fire_rate = 0.5f;
-		setPlayerTimer(0,30);
+		setPlayerTimer(1,30);
 	
 
 

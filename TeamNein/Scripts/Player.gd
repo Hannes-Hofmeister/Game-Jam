@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 signal playerCollision
 var movementSpeed = 400
 var shootingSpeed=0.5
