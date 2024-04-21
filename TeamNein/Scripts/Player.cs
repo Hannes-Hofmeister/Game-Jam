@@ -11,6 +11,8 @@ public partial class Player : CharacterBody2D
 	//Moving Attributes 
 	[Export] public int Speed = 300;
 	public Vector2 ScreenSize;
+	private int countdownMinutes;
+	private int countdownSeconds;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,26 +20,52 @@ public partial class Player : CharacterBody2D
 		Node2D bullet = bullet_scn.Instantiate<Node2D>();
 		ScreenSize = GetViewportRect().Size;
 		_fire_rate = 0.5f;
-		setPlayerTimer(0,30);
-	
+		setPlayerTimer(0, 30);
 
+		Node enemyNode = GetNode("res://Entities/enemys.tscn");
 
 
 	}
+
 	// This function allows to change the minutes value from the Countdown.gd
 	public void setPlayerTimer(int minutesValue, int secondsValue){
 		timer = GetNode<Control>("./Control");
-		int countdownMinutes = (int)timer.Get("minutes");
-		int countdownSeconds = (int)timer.Get("seconds");
+		countdownMinutes = (int)timer.Get("minutes");
+		countdownSeconds = (int)timer.Get("seconds");
 		timer.Set("minutes",minutesValue);
 		timer.Set("seconds",secondsValue);
 	}
 	
+  
    public void setPosition(Vector2 pos)
 	{
 		Position = pos;
 	}
 	
+=======
+	public int getPlayerMinute()
+	{
+		return countdownMinutes;
+
+	}
+	
+		public int getPlayerSeconds()
+		{
+			return countdownSeconds;
+
+		}
+    
+	public int getPlayerMinute()
+	{
+		return countdownMinutes;
+
+	}
+	
+		public int getPlayerSeconds()
+		{
+			return countdownSeconds;
+
+		}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
