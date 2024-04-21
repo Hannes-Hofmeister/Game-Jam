@@ -2,7 +2,7 @@ extends Node2D
 
 
 var shop = preload("res://Scenes/Map/shop_room.tscn").instantiate();
-var room = preload("res://Scenes/Map/tile_map.tscn").instantiate();
+var room = preload("res://Scenes/Map/room.tscn").instantiate();
 var player = preload("res://Entities/player.tscn").instantiate();
 var mainmenue = preload("res://Scenes/MainMenu.tscn").instantiate();
 

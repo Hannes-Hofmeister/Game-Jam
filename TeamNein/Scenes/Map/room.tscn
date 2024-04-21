@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://x6r7qqlgs1eg"]
+
+[ext_resource type="Script" path="res://Scenes/Map/room.gd" id="1_vwjy1"]
+[ext_resource type="Texture2D" uid="uid://cgbm0sf7suxlr" path="res://Assets/Room Assets/Background.png" id="2_51as4"]
+[ext_resource type="Texture2D" uid="uid://dc2w08qnhxb62" path="res://Assets/Room Assets/Tilemap.png" id="3_ulnm3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3kfa"]
+texture = ExtResource("3_ulnm3")
+separation = Vector2i(0, 4)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+0:1/0 = 0
+14:1/0 = 0
+0:2/0 = 0
+14:2/0 = 0
+0:3/0 = 0
+14:3/0 = 0
+0:4/0 = 0
+14:4/0 = 0
+0:5/0 = 0
+14:5/0 = 0
+0:6/0 = 0
+14:6/0 = 0
+0:7/0 = 0
+14:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rjsk0"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_j3kfa")
+
+[node name="Room" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_51as4")
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_rjsk0")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 14, 917505, 0, 458766, 917505, 7, 458752, 1, 7, 393216, 1, 3, 327680, 1, 2, 262144, 1, 1, 196608, 1, 5, 131072, 1, 3, 65536, 1, 6, 1, 65537, 0, 2, 720897, 0, 3, 65537, 0, 4, 720897, 0, 5, 262145, 0, 6, 65537, 0, 7, 262145, 0, 8, 65537, 0, 9, 65537, 0, 10, 262145, 0, 11, 720897, 0, 12, 262145, 0, 13, 786433, 0, 65550, 917505, 3, 131086, 917505, 4, 393230, 917505, 2, 327694, 917505, 1, 196622, 917505, 6, 262158, 917505, 3, 458765, 851969, 7, 458764, 65537, 7, 458763, 458753, 7, 458762, 65537, 7, 458761, 655361, 7, 458760, 786433, 7, 458759, 65537, 7, 458758, 851969, 7, 458757, 589825, 7, 458756, 65537, 7, 458755, 458753, 7, 458754, 589825, 7, 458753, 851969, 7)
+script = ExtResource("1_vwjy1")
