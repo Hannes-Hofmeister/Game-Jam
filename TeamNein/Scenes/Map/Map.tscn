@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://gjgivkkmnegd"]
+
+[ext_resource type="Script" path="res://Scripts/Map.gd" id="1_ods5y"]
+[ext_resource type="PackedScene" uid="uid://cbmdrtbsdmqwg" path="res://Scenes/Map/door.tscn" id="2_78ikr"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_ods5y")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door0" parent="Doors" instance=ExtResource("2_78ikr")]
+position = Vector2(935, 275)
+
+[node name="Door1" parent="Doors" instance=ExtResource("2_78ikr")]
+position = Vector2(476, -15)
+
+[node name="Door2" parent="Doors" instance=ExtResource("2_78ikr")]
+position = Vector2(-10, 271)
+
+[node name="Door3" parent="Doors" instance=ExtResource("2_78ikr")]
+position = Vector2(501, 542)
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[connection signal="doorCollided" from="Doors/Door0" to="." method="_on_door_0_door_collided"]
+[connection signal="doorCollided" from="Doors/Door1" to="." method="_on_door_1_door_collided"]
+[connection signal="doorCollided" from="Doors/Door2" to="." method="_on_door_2_door_collided"]
+[connection signal="doorCollided" from="Doors/Door3" to="." method="_on_door_3_door_collided"]

@@ -3,7 +3,7 @@ extends Node2D
 signal onEnemyDeath (deathSeconds,deathMinutes)
 
 var shop = preload("res://Scenes/Map/shop_room.tscn").instantiate();
-var room = preload("res://Scenes/Map/room.tscn").instantiate();
+var map = preload("res://Scenes/Map/Map.tscn").instantiate();
 var player = preload("res://Entities/player.tscn").instantiate();
 var mainmenue = preload("res://Scenes/MainMenu.tscn").instantiate();
 var enemy = preload("res://Entities/enemys.tscn").instantiate();
@@ -38,7 +38,7 @@ func addTime(enemyMinutes,enemySeconds):
 
 	
 func startGame():
-	add_child(room)
+	add_child(map)
 	add_child(player)
 	add_child(enemy)
 	enemy.connect("death",addTime)
