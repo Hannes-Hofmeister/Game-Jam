@@ -31,7 +31,7 @@ func _on_body_entered(body):
 			print("Main")
 			var main_node  = child.get_children();
 			for main_child in main_node:
-				if(main_child.get_name()== "NormalRoom"):
+				if(main_child is normalRoom):
 					main_child.queue_free()
 	
 
