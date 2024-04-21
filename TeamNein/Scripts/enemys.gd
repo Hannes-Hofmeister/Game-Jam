@@ -6,6 +6,7 @@ var playerChase = false
 var player = null
 var health = 100
 var playerTimer
+signal death (deathSeconds,deathMinutes)
 
 
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _physics_process(delta):
 			var timer := get_node("./Control") as Control
 			var currentMinutes := timer.get("minutes") as int
 			var currentSeconds := timer.get("seconds") as int
+			death.emit(currentMinutes,currentSeconds)
 
 			queue_free()
 			

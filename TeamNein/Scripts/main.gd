@@ -1,10 +1,12 @@
 extends Node2D
 
+signal onEnemyDeath (deathSeconds,deathMinutes)
 
 var shop = preload("res://Scenes/Map/shop_room.tscn").instantiate();
 var room = preload("res://Scenes/Map/room.tscn").instantiate();
 var player = preload("res://Entities/player.tscn").instantiate();
 var mainmenue = preload("res://Scenes/MainMenu.tscn").instantiate();
+var enemy = preload("res://Entities/enemys.tscn").instantiate();
 
 
 
@@ -13,6 +15,7 @@ func _ready():
 	add_child(mainmenue)
 	mainmenue.position = Vector2(400,300)
 	mainmenue.connect("startGame",startGame)
+	
 	
 	
 
@@ -28,13 +31,17 @@ func _ready():
 			#print("kekw")
 '	
 	
-
-
+func addTime(enemyMinutes,enemySeconds):
+	print("Helo")
+	onEnemyDeath.emit(enemyMinutes,enemySeconds)
+	pass
 
 	
 func startGame():
 	add_child(room)
 	add_child(player)
+	add_child(enemy)
+	enemy.connect("death",addTime)
 
 #	room.connect("DoorActivated",doorEntered)
 
@@ -42,3 +49,6 @@ func startGame():
 	
 func DoorEntered():
 	print("test")
+
+
+

@@ -1,5 +1,4 @@
 extends Area2D
-
 signal playerCollision
 var movementSpeed = 400
 var shootingSpeed=0.5
@@ -7,15 +6,43 @@ var timeUntilFire=0
 var bulletDamage
 var playerTimer
 var screen_size
+var root 
+var timer
+var countdown_minutes
+var countdown_seconds
 #@export var bullet
 #PackedScene Bullet = "res://Entities/bullet.tscn"
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	set_player_timer(1,30)
 	screen_size = get_viewport_rect().size
+	root = get_tree().root.get_node("Main")
+	print("hallo")
+	root.connect("onEnemyDeath",addTime)
+
+
+
+func addTime(enemyMinutes,enemySeconds):
+	print("hallo")
+	var currentMinutes = timer.get("minutes") as int
+	var currentSeconds = timer.get("seconds") as int
+	currentMinutes += enemyMinutes
+	currentSeconds += enemySeconds
+	timer.set("minutes", currentMinutes)
+	timer.set("seconds", currentSeconds)
 	
+	pass
+	
+	
+func set_player_timer(minutes_value: int, seconds_value: int) -> void:
+	timer = get_node("Control") as Control
+	countdown_minutes = timer.get("minutes") as int
+	countdown_seconds = timer.get("seconds") as int
+	timer.set("minutes", minutes_value)
+	timer.set("seconds", seconds_value)
 
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
