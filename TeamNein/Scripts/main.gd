@@ -2,14 +2,16 @@ extends Node2D
 
 
 var shop = preload("res://Scenes/Map/shop_room.tscn").instantiate();
+var room = preload("res://Scenes/Map/tile_map.tscn").instantiate();
 var player = preload("res://Entities/player.tscn").instantiate();
-
-#var gamemanager = preload("res://main.tscn").instantiate();
 var mainmenue = preload("res://Scenes/MainMenu.tscn").instantiate();
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(mainmenue)
+	mainmenue.position = Vector2(400,300)
 	mainmenue.connect("startGame",startGame)
 	
 	
@@ -23,4 +25,10 @@ func _process(delta):
 	
 func startGame():
 	add_child(player)
+	add_child(room)
+	room.connect("DoorActivated",DoorEntered)
+	mainmenue.queue_free()
+	
+func DoorEntered():
+	print("test")
 	

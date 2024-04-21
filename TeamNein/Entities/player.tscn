@@ -252,7 +252,10 @@ animations = [{
 radius = 11.7354
 height = 92.3018
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+top_level = true
+visibility_layer = 2
+z_index = 1
 position = Vector2(91, 75)
 collision_layer = 2
 collision_mask = 2
