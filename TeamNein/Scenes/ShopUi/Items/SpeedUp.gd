@@ -13,4 +13,5 @@ func _process(delta):
 
 
 func _on_buy_button_pressed():
+	print("SpeedUp")
 	SpeedUp.emit()

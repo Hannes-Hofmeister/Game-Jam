@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var timer: Control
 var bullet_scn # Insert Scene from Godot
-var _fire_rate: float
+@export var _fire_rate: float
 var _time_until_fire: float = 0
 @export var Speed: int = 300
 var ScreenSize: Vector2
@@ -26,11 +26,18 @@ func set_player_timer(minutesValue: int, secondsValue: int) -> void:
 func add_time() -> void:
 	pass
 
+
 func get_player_minute() -> int:
 	return countdownMinutes
 
 func get_player_seconds() -> int:
 	return countdownSeconds
+	
+	
+# für shop
+func set_player_fire_rate(newRate):
+	print("FireRateUp")
+	_fire_rate = newRate
 
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.

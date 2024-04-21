@@ -2,6 +2,7 @@ extends Node2D
 
 signal onEnemyDeath (deathSeconds,deathMinutes)
 
+
 var shop = preload("res://Scenes/Map/shop_room.tscn").instantiate();
 var room = preload("res://Scenes/Map/room.tscn").instantiate();
 var player = preload("res://Entities/player.tscn").instantiate();
@@ -49,6 +50,12 @@ func startGame():
 	
 func DoorEntered():
 	print("test")
+	$FireRateUp.connect("FireRateUp", FireRateUp)
+
+var playerscript = load("res://player.gd")
 
 
+func FireRateUp():
+	print("FireRateUp")
+	playerscript.set_fire_rate(1)
 
