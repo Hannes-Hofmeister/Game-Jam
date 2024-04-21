@@ -39,4 +39,4 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Buy!"
 
-[connection signal="pressed" from="VBoxContainer/BuyButton" to="VBoxContainer/BuyButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
