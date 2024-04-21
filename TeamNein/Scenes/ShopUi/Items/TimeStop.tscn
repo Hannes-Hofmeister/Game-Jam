@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp6rvses12enw"]
+[gd_scene load_steps=7 format=3 uid="uid://cp0sklqqemdc0"]
 
 [ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="1_kddej"]
+[ext_resource type="FontFile" uid="uid://cg8jbxuo0m1tc" path="res://Assets/Font.ttf" id="2_pqwx3"]
+[ext_resource type="FontFile" uid="uid://cgd000hf50032" path="res://Assets/Font Small.ttf" id="3_sgfgp"]
+[ext_resource type="Texture2D" uid="uid://1uytflf4ld2v" path="res://Assets/Shop Assets/Shop UI/BuyButtonActive.png" id="4_jgfdg"]
+[ext_resource type="Texture2D" uid="uid://bnpjtd8pn1i2t" path="res://Assets/Shop Assets/Shop UI/BuyButtonInactive.png" id="5_cjtox"]
+[ext_resource type="Script" path="res://Scenes/ShopUi/Items/DamageUpButton.gd" id="6_lbmjn"]
 
-[node name="TimeStop" type="Control"]
+[node name="DamageUp" type="Control"]
 layout_mode = 3
 anchor_right = 0.132
 anchor_bottom = 0.351
@@ -12,13 +17,9 @@ size_flags_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
 offset_left = -64.0
 offset_right = 64.0
 offset_bottom = 190.0
-grow_horizontal = 2
 alignment = 1
 
 [node name="ItemPic" type="TextureRect" parent="VBoxContainer"]
@@ -27,10 +28,23 @@ texture = ExtResource("1_kddej")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Time Stop per
-Room entered"
+theme_override_fonts/font = ExtResource("2_pqwx3")
+theme_override_font_sizes/font_size = 32
+text = "Time Stop"
 horizontal_alignment = 1
 
-[node name="BuyButton" type="Button" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Buy!"
+theme_override_fonts/font = ExtResource("3_sgfgp")
+theme_override_font_sizes/font_size = 32
+text = "while entinger a
+new room, stops
+the time for x s"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_jgfdg")
+texture_pressed = ExtResource("5_cjtox")
+stretch_mode = 3
+script = ExtResource("6_lbmjn")

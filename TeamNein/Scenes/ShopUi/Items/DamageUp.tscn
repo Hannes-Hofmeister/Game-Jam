@@ -1,28 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjgn038h5cl6w"]
+[gd_scene load_steps=7 format=3 uid="uid://d0x7krdgqsp3a"]
 
 [ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="1_noh8y"]
-
-[sub_resource type="GDScript" id="GDScript_ahj7q"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_pressed():
-	emit_signal(\"FireRateUp\");
-
-
-func _on_pressed_FireRateUp():
-	pass # Replace with function body.
-"
+[ext_resource type="Texture2D" uid="uid://1uytflf4ld2v" path="res://Assets/Shop Assets/Shop UI/BuyButtonActive.png" id="2_2u8ox"]
+[ext_resource type="FontFile" uid="uid://cg8jbxuo0m1tc" path="res://Assets/Font.ttf" id="2_h7hrc"]
+[ext_resource type="FontFile" uid="uid://cgd000hf50032" path="res://Assets/Font Small.ttf" id="3_3dhjf"]
+[ext_resource type="Texture2D" uid="uid://bnpjtd8pn1i2t" path="res://Assets/Shop Assets/Shop UI/BuyButtonInactive.png" id="3_4538a"]
+[ext_resource type="Script" path="res://Scenes/ShopUi/Items/DamageUpButton.gd" id="4_xaba7"]
 
 [node name="DamageUp" type="Control"]
 layout_mode = 3
@@ -34,13 +17,9 @@ size_flags_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
 offset_left = -64.0
 offset_right = 64.0
 offset_bottom = 190.0
-grow_horizontal = 2
 alignment = 1
 
 [node name="ItemPic" type="TextureRect" parent="VBoxContainer"]
@@ -49,12 +28,23 @@ texture = ExtResource("1_noh8y")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Damage Up"
+theme_override_fonts/font = ExtResource("2_h7hrc")
+theme_override_font_sizes/font_size = 32
+text = "Time earned"
 horizontal_alignment = 1
 
-[node name="BuyButton" type="Button" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Buy!"
-script = SubResource("GDScript_ahj7q")
+theme_override_fonts/font = ExtResource("3_3dhjf")
+theme_override_font_sizes/font_size = 32
+text = "Increases your
+time earned by 
+killing enemies"
+horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/BuyButton" to="VBoxContainer/BuyButton" method="_on_pressed"]
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_2u8ox")
+texture_pressed = ExtResource("3_4538a")
+stretch_mode = 3
+script = ExtResource("4_xaba7")
