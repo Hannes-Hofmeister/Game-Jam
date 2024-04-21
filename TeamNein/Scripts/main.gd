@@ -13,7 +13,6 @@ var enemy = preload("res://Entities/enemys.tscn").instantiate();
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(mainmenue)
-	mainmenue.position = Vector2(400,300)
 	mainmenue.connect("startGame",startGame)
 
 

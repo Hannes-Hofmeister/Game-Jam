@@ -1,23 +1,26 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5hi0tc4xb6k5"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_aegov"]
-[ext_resource type="Texture2D" uid="uid://b84b7711od72n" path="res://Assets/1_XmoPcNqLCJYK2AvFiFol5w.png" id="1_l1bsr"]
+[ext_resource type="Texture2D" path="res://Assets/MainScreen.png" id="2_gop6h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 480.0
+offset_right = 31.0
+offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_aegov")
 
-[node name="1XmoPcNqLcjyk2AvFiFol5w" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(577, 324)
-scale = Vector2(0.824286, 0.821066)
-texture = ExtResource("1_l1bsr")
+[node name="MainScreen" type="Sprite2D" parent="."]
+position = Vector2(461.5, -205.5)
+scale = Vector2(1.08152, 1.06481)
+texture = ExtResource("2_gop6h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -26,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -50.5
-offset_right = 67.5
-offset_bottom = 50.5
+offset_left = 50.0
+offset_top = -84.0
+offset_right = 146.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 
