@@ -32,11 +32,8 @@ func _process(delta):
 	
 func startGame():
 	add_child(room)
-<<<<<<< HEAD
 	add_child(player)
-	room.connect("DoorActivated",DoorEntered)
-=======
->>>>>>> 70acdea05d506e8fdd2cc6d2e3da81daccb49e17
+	room.connect("DoorActivated",doorEntered)
 	mainmenue.queue_free()
 	
 func doorEntered():
