@@ -1,22 +1,281 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctbhfia8t462q"]
+[gd_scene load_steps=55 format=3 uid="uid://cbeanfx0ugyfv"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_dvckw"]
-[ext_resource type="SpriteFrames" uid="uid://bqj0r240ov0ae" path="res://Assets/character Assets/PlayerAnimation.tres" id="2_p8xg7"]
-[ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="3_31an3"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_febm5"]
+[ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="2_3y0pr"]
+[ext_resource type="PackedScene" uid="uid://dkri68ttn6r3t" path="res://Entities/bullet.tscn" id="2_vtxki"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-1.png" id="4_fwqqj"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-2.png" id="5_tgyb4"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-3.png" id="6_3r4th"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-4.png" id="7_13m0b"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-5.png" id="8_f0egm"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down/Walk_Down-6.png" id="9_cbydv"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-1.png" id="10_cr0d0"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-2.png" id="11_gj8sk"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-3.png" id="12_ummkl"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-4.png" id="13_g41my"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-5.png" id="14_awn8e"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Left/Walk_Down_Left-6.png" id="15_3sjnt"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-1.png" id="16_64rdi"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-2.png" id="17_stywv"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-3.png" id="18_8dkiv"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-4.png" id="19_c1r6w"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-5.png" id="20_20k1m"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Down Right/Walk_Down_Right-6.png" id="21_yrdel"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-1.png" id="22_23huj"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-2.png" id="23_o33m6"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-3.png" id="24_sx6i0"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-4.png" id="25_5h4lg"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-5.png" id="26_uj2jh"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Left/Walk_Left-6.png" id="27_gyamm"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-1.png" id="28_ywx45"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-2.png" id="29_tvkm2"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-3.png" id="30_6djk2"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-4.png" id="31_2pob0"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-5.png" id="32_uqvuc"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Right/Walk_Right-6.png" id="33_ijj7p"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-1.png" id="34_emd48"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-2.png" id="35_ajo7p"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-3.png" id="36_hnl0v"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-4.png" id="37_vg2bm"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-5.png" id="38_i6i2x"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up/Walk_Up-6.png" id="39_o5rib"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-1.png" id="40_w025u"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-2.png" id="41_tbt8t"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-3.png" id="42_bawfu"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-4.png" id="43_i2d7w"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-5.png" id="44_xkd0p"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Left/Walk_Top_Left-6.png" id="45_sjcmq"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-1.png" id="46_40aog"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-2.png" id="47_guc18"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-3.png" id="48_kx824"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-4.png" id="49_pv3vn"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-5.png" id="50_yygyr"]
+[ext_resource type="Texture2D" path="res://Assets/character Assets/Walk Animations/Walk Up Right/Walk_Top_Right-6.png" id="51_bmgbl"]
+[ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="52_cispx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nau4k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmtx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3y0pr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fwqqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tgyb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3r4th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_13m0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0egm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cbydv")
+}],
+"loop": true,
+"name": &"walk down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cr0d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gj8sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ummkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g41my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_awn8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3sjnt")
+}],
+"loop": true,
+"name": &"walk down left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_64rdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_stywv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8dkiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c1r6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_20k1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yrdel")
+}],
+"loop": true,
+"name": &"walk down right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_23huj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o33m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sx6i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5h4lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_uj2jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gyamm")
+}],
+"loop": true,
+"name": &"walk left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_ywx45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tvkm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6djk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2pob0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_uqvuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ijj7p")
+}],
+"loop": true,
+"name": &"walk right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_emd48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ajo7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hnl0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vg2bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_i6i2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_o5rib")
+}],
+"loop": false,
+"name": &"walk up",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_w025u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tbt8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bawfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_i2d7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xkd0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_sjcmq")
+}],
+"loop": true,
+"name": &"walk up left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_40aog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_guc18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kx824")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pv3vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_yygyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_bmgbl")
+}],
+"loop": true,
+"name": &"walk up right",
+"speed": 5.0
+}]
 
-[node name="Player" type="Area2D"]
-script = ExtResource("1_dvckw")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cyhu"]
+radius = 11.7354
+height = 92.3018
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.76, 2.2)
-shape = SubResource("CapsuleShape2D_nau4k")
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+top_level = true
+visibility_layer = 2
+z_index = 1
+position = Vector2(91, 75)
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_febm5")
+bullet_scn = ExtResource("2_vtxki")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_p8xg7")
+sprite_frames = SubResource("SpriteFrames_qmtx6")
 animation = &"walk down left"
+frame_progress = 0.364311
 
-[node name="Control" parent="." instance=ExtResource("3_31an3")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.19297, 0.758382)
+shape = SubResource("CapsuleShape2D_7cyhu")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="Control" parent="." instance=ExtResource("52_cispx")]
+offset_left = 2.0
+offset_top = -61.0
+offset_right = 2.0
+offset_bottom = -61.0
+scale = Vector2(1, 1.32)
