@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	print("pressed!")
+	print("FireRateUp")
 	emit_signal("FireRateUp")

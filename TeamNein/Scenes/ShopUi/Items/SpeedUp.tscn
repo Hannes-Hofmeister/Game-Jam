@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjgn038h5cl6w"]
+[gd_scene load_steps=3 format=3 uid="uid://cdc6yty5qghee"]
 
 [ext_resource type="Texture2D" uid="uid://tmv6qxvvbssa" path="res://Assets/icon.svg" id="1_s3yoq"]
+[ext_resource type="Script" path="res://Scenes/ShopUi/Items/SpeedUp.gd" id="2_p37l8"]
 
 [node name="SpeedUp" type="Control"]
 layout_mode = 3
@@ -33,3 +34,6 @@ horizontal_alignment = 1
 [node name="BuyButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Buy!"
+script = ExtResource("2_p37l8")
+
+[connection signal="pressed" from="VBoxContainer/BuyButton" to="VBoxContainer/BuyButton" method="_on_pressed"]

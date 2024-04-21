@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	pass # Replace with function body.
+	print("SpeedUp!")
+	emit_signal("SpeedUp")
