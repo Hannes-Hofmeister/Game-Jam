@@ -51,19 +51,22 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk up left"
 	elif velocity.x > 0 && velocity.y<0:
 		$AnimatedSprite2D.animation = "walk up right"
-	'	
+		
 	if timeUntilFire > shootingSpeed:
-		var shootDirection = Input.get_vector("shoot_left","shoot_right","shoot_up","shoot_down")
-		if shootDirection.x !=0 || shootDirection.y !=0:
-			var bullet = load("res://Entities/bullet.tscn").Inst
+		var shoot_direction = Input.get_vector("shoot_left", "shoot_right", "shoot_up", "shoot_down").normalized()
+		if shoot_direction.x != 0 || shoot_direction.y != 0:
+			print(shoot_direction)
+			var bullet_scene = load("res://Entities/bullet.tscn")
+			var bullet_instance = bullet_scene.instantiate()
 			timeUntilFire = 0
-			bullet.direction = shootDirection
-			get_parent().add_child(bullet)
-	else :
+			bullet_instance.rotation = shoot_direction.angle()	
+			bullet_instance.global_position = global_position
+			get_tree().root.add_child(bullet_instance)
+	else:
 		timeUntilFire += delta
-	'
+				
+				
 func _on_area_entered(area):
-	hide() # Player disappears after being hit.
 	playerCollision.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	#$CollisionShape2D.set_deferred("disabled", true)

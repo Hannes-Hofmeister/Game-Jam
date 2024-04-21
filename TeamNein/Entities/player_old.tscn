@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbeanfx0ugyfv"]
+[gd_scene load_steps=5 format=3 uid="uid://bml175pfvu8j6"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_opc4t"]
 [ext_resource type="SpriteFrames" uid="uid://bqj0r240ov0ae" path="res://Assets/character Assets/PlayerAnimation.tres" id="2_km7ww"]
