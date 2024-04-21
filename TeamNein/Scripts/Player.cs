@@ -36,6 +36,13 @@ public partial class Player : CharacterBody2D
 		timer.Set("seconds",secondsValue);
 	}
 	
+  
+   public void setPosition(Vector2 pos)
+	{
+		Position = pos;
+	}
+	
+=======
 	public int getPlayerMinute()
 	{
 		return countdownMinutes;
@@ -47,9 +54,18 @@ public partial class Player : CharacterBody2D
 			return countdownSeconds;
 
 		}
-	
-	
+    
+	public int getPlayerMinute()
+	{
+		return countdownMinutes;
 
+	}
+	
+		public int getPlayerSeconds()
+		{
+			return countdownSeconds;
+
+		}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
