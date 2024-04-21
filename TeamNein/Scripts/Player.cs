@@ -32,7 +32,12 @@ public partial class Player : CharacterBody2D
 		timer.Set("minutes",minutesValue);
 		timer.Set("seconds",secondsValue);
 	}
-
+	
+   public void setPosition(Vector2 pos)
+	{
+		Position = pos;
+	}
+	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
