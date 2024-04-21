@@ -18,14 +18,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+'func _process(delta):
 	if not (is_connected("doorOn",doorEntered)):
 		#print(get_child_count())
 		var child = room.get_children(true)
 		for dor in child:
 			dor.connect("doorOn",doorEntered)
 			#print("kekw")
-	
+'	
 	
 
 
