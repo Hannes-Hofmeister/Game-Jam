@@ -1,13 +1,16 @@
 extends Area2D
 
+signal playerCollision
 var movementSpeed = 400
-var shootingSpeed
+var shootingSpeed=0.5
+var timeUntilFire=0
 var bulletDamage
 var playerTimer
 var screen_size
 #@export var bullet
-
+#PackedScene Bullet = "res://Entities/bullet.tscn"
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	
@@ -48,3 +51,18 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk up left"
 	elif velocity.x > 0 && velocity.y<0:
 		$AnimatedSprite2D.animation = "walk up right"
+		
+	if timeUntilFire > shootingSpeed:
+		var shootDirection = Input.get_vector("shoot_left","shoot_right","shoot_up","shoot_down")
+		if shootDirection.x !=0 || shootDirection.y !=0:
+		#	var bullet = load("res://Entities/bullet.tscn").Inst
+		#	timeUntilFire = 0
+		#	bullet.direction = shootDirection
+		#	get_parent().add_child(bullet)
+	else :
+		timeUntilFire += delta
+func _on_area_entered(area):
+	hide() # Player disappears after being hit.
+	playerCollision.emit()
+	# Must be deferred as we can't change physics properties on a physics callback.
+	#$CollisionShape2D.set_deferred("disabled", true)

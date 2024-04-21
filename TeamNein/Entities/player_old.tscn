@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbeanfx0ugyfv"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_opc4t"]
+[ext_resource type="SpriteFrames" uid="uid://bqj0r240ov0ae" path="res://Assets/character Assets/PlayerAnimation.tres" id="2_km7ww"]
+[ext_resource type="PackedScene" uid="uid://bpftod4oxkevm" path="res://Scenes/node_2d.tscn" id="51_57253"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cyhu"]
+radius = 11.7354
+height = 92.3018
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+top_level = true
+visibility_layer = 2
+z_index = 1
+position = Vector2(91, 75)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_opc4t")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_km7ww")
+animation = &"walk down left"
+frame_progress = 0.364311
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.19297, 0.758382)
+shape = SubResource("CapsuleShape2D_7cyhu")
+
+[node name="Control" parent="." instance=ExtResource("51_57253")]
+offset_left = 2.0
+offset_top = -61.0
+offset_right = 2.0
+offset_bottom = -61.0
+scale = Vector2(1, 1.32)
