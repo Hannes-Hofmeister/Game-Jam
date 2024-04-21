@@ -1,5 +1,6 @@
-extends Button
+extends Control
 
+signal SpeedUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,5 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
-	print("SpeedUp!")
-	emit_signal("SpeedUp")
+func _on_buy_button_pressed():
+	SpeedUp.emit()

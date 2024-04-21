@@ -1,6 +1,6 @@
 extends Control
 
-
+signal TimeEarnUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +12,6 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
-	print("TimeEarnUp!")
-	emit_signal("TimeEarnUp")
-
-
 func _on_buy_button_pressed():
-	pass # Replace with function body.
+	print("TimeEarnUp")
+	TimeEarnUp.emit()

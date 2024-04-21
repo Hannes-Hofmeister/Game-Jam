@@ -1,5 +1,6 @@
-extends TextureButton
+extends Control
 
+signal DamageUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,9 +12,5 @@ func _process(_delta):
 	pass
 
 
-func _on_pressed():
-	emit_signal("DamageUp");
-
-
-func _on_pressed_FireRateUp():
-	pass # Replace with function body.
+func _on_buy_button_pressed():
+	DamageUp.emit()

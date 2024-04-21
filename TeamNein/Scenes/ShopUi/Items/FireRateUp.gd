@@ -1,5 +1,6 @@
-extends Button
+extends Control
 
+signal FireRateUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,5 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
-	print("FireRateUp")
-	emit_signal("FireRateUp")
+func _on_buy_button_pressed():
+	FireRateUp.emit()
