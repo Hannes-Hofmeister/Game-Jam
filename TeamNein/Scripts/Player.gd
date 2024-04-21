@@ -51,16 +51,17 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk up left"
 	elif velocity.x > 0 && velocity.y<0:
 		$AnimatedSprite2D.animation = "walk up right"
-		
+	'	
 	if timeUntilFire > shootingSpeed:
 		var shootDirection = Input.get_vector("shoot_left","shoot_right","shoot_up","shoot_down")
 		if shootDirection.x !=0 || shootDirection.y !=0:
-		#	var bullet = load("res://Entities/bullet.tscn").Inst
-		#	timeUntilFire = 0
-		#	bullet.direction = shootDirection
-		#	get_parent().add_child(bullet)
+			var bullet = load("res://Entities/bullet.tscn").Inst
+			timeUntilFire = 0
+			bullet.direction = shootDirection
+			get_parent().add_child(bullet)
 	else :
 		timeUntilFire += delta
+	'
 func _on_area_entered(area):
 	hide() # Player disappears after being hit.
 	playerCollision.emit()
