@@ -15,9 +15,6 @@ func _ready():
 	add_child(mainmenue)
 	mainmenue.position = Vector2(400,300)
 	mainmenue.connect("startGame",startGame)
-	
-	
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

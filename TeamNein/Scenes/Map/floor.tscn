@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4kcagt84hc3b"]
+
+[ext_resource type="Script" path="res://Scenes/Map/floor.gd" id="1_6k0w5"]
+[ext_resource type="PackedScene" uid="uid://cbeanfx0ugyfv" path="res://Entities/player.tscn" id="2_yx4va"]
+[ext_resource type="Script" path="res://Scenes/Map/Camera2D.gd" id="3_py22l"]
+
+[node name="Floor" type="Node2D"]
+script = ExtResource("1_6k0w5")
+
+[node name="Player" parent="." instance=ExtResource("2_yx4va")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_py22l")
