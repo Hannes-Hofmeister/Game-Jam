@@ -24,7 +24,7 @@ func _process(delta):
 		var child = room.get_children(true)
 		for dor in child:
 			dor.connect("doorOn",doorEntered)
-			print("kekw")
+			#print("kekw")
 	
 	
 
