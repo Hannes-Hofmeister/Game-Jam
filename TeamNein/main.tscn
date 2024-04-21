@@ -4,3 +4,5 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p13vl")
+
+[connection signal="onEnemyDeath" from="." to="." method="_on_on_enemy_death"]
